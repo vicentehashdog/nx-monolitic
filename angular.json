@@ -22,7 +22,7 @@
             "tsConfig": "apps/myapp/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/myapp/src/favicon.ico", "apps/myapp/src/assets"],
-            "styles": ["apps/myapp/src/styles.scss"],
+            "styles": ["apps/myapp/src/styles.scss", "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"],
             "scripts": []
           },
           "configurations": {

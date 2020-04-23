@@ -1,0 +1,27 @@
+<div>
+  <div>
+    <button nz-button nzType="default" (click)="goBack()">Back</button> 
+  </div>
+  <div>
+    <form nz-form [nzLayout]="'vertical'" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Name">
+          <nz-input-group nzPrefixIcon="user">
+            <input formControlName="name" nz-input placeholder="Name" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Email">
+          <nz-input-group nzPrefixIcon="mail">
+            <input formControlName="email" nz-input placeholder="Email" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <button nz-button nzType="primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+  </div>
+</div>
