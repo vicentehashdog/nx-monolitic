@@ -22,7 +22,10 @@
             "tsConfig": "apps/myapp/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/myapp/src/favicon.ico", "apps/myapp/src/assets"],
-            "styles": ["apps/myapp/src/styles.scss", "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"],
+            "styles": [
+              "apps/myapp/src/styles.scss",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -198,6 +201,32 @@
           "options": {
             "jestConfig": "libs/api-interfaces/jest.config.js",
             "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data": {
+      "root": "libs/data",
+      "sourceRoot": "libs/data/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/data/tsconfig.lib.json",
+              "libs/data/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/data/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data/jest.config.js",
+            "tsConfig": "libs/data/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

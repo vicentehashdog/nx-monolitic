@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from '../../entity/user.entity';
-import { CreateUser } from '../../dto/createUser';
+import { UserDTO } from '../../dto/userDto';
 
 @Controller('users')
 export class UsersController {
@@ -15,7 +15,7 @@ export class UsersController {
   }
 
   @Post()
-  save(@Body() userDto: CreateUser): Promise<User> {
+  save(@Body() userDto: UserDTO): Promise<User> {
     const _user = new User();
 
     _user.name = userDto.name;

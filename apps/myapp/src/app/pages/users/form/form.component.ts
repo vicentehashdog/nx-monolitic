@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nex-test-form',
@@ -14,7 +16,9 @@ export class FormComponent implements OnInit {
   });
 
   constructor(
-    private location: Location
+    private location: Location,
+    private usersService: UsersService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +29,9 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.profileForm.value);
+    this.usersService.saveUser(this.profileForm.value).subscribe(
+      () => this.router.navigateByUrl('users'),
+      (error) => console.error(error)
+    );
   }
 }

@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nex-test/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@nex-test/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@nex-test/data": ["libs/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
